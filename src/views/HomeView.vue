@@ -16,7 +16,36 @@
     name: 'HomeView',
     components: {
       AppHeader
-    }
+    },
+
+    props: {
+      msg: String,
+    },
+    data() {
+      return {
+        fact: "",
+      };
+    },
+    methods: {
+      fetchData() {
+        fetch('https://restcountries.com/v3.1/all', {
+          method: "GET",
+        })
+        .then((response) => {
+          var data = response.json();
+          return data;
+        })
+        .then((response) => {
+          console.log(response)
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+      },
+    },
+    beforeMount() {
+      this.fetchData()
+    },
   }
 
 </script>
