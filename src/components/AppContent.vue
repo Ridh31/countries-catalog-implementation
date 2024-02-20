@@ -1,15 +1,11 @@
 <template>
-  <div class="h-screen flex justify-center items-start bg-gray-100 p-5">
+  <div id="country-catalog" class="h-screen flex justify-center items-start bg-gray-100 p-5">
     <div class="bg-white p-5 shadow-md rounded-md">
-      <table class="w-96">
-        <thead class="p-5">
-          <tr>
-            <th>Flag</th>
-          </tr>
-        </thead>
-      <tbody>
-      </tbody>
-      </table>
+        <ul>
+          <li v-for="(country, index) in countries" :key="country">
+            <div>{{ index }}{{ country.cca2 }}</div>
+          </li>
+        </ul>
     </div>
   </div>
 </template>
@@ -25,11 +21,11 @@
     },
     data() {
       return {
-        fact: "",
+        countries: {},
       };
     },
     methods: {
-      fetchData() {
+      fetchCountries: function() {
         fetch('https://restcountries.com/v3.1/all', {
           method: "GET",
         })
@@ -39,19 +35,20 @@
         })
         .then((response) => {
 
-            $.each(response, (index, country) => {
+          $.each(response, (index, countries) => {
+            this.countries = countries
+          });
 
-                console.log(country);
-            });
+          console.log(this.countries)
         })
         .catch((err) => {
           console.error(err);
         });
       },
     },
-    beforeMount() {
-      this.fetchData()
-    },
+    mounted() {
+      this.fetchCountries();
+    }
   }
 
-  </script>
+</script>
