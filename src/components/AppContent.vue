@@ -1,9 +1,10 @@
 <template>
   <div id="country-catalog" class="h-screen flex justify-center items-start bg-gray-100 p-5">
-    <div class="bg-white p-5 shadow-md rounded-md">
-        <ul>
-          <li v-for="(country, index) in countries" :key="country">
-            <div>{{ index }}{{ country.cca2 }}</div>
+    <div>
+        <ul class="grid grid-cols-4 gap-3">
+          <li v-for="country in countries" :key="country" class="bg-white p-5 shadow-md rounded-md">
+            <img :src="country.flags.png">
+            <div>{{ country.name.common }}</div>
           </li>
         </ul>
     </div>
@@ -12,8 +13,6 @@
 
 <script>
 
-  import $ from 'jquery';
-
   export default {
     name: 'AppContent',
     props: {
@@ -21,7 +20,7 @@
     },
     data() {
       return {
-        countries: {},
+        countries: []
       };
     },
     methods: {
@@ -34,12 +33,8 @@
           return data;
         })
         .then((response) => {
-
-          $.each(response, (index, countries) => {
-            this.countries = countries
-          });
-
-          console.log(this.countries)
+            this.countries = response;
+            console.log(response)
         })
         .catch((err) => {
           console.error(err);
