@@ -2,7 +2,7 @@
   <nav class="divide-x-2 divide-gray-300 flex justify-center items-center bg-white p-5 shadow-md sticky top-0">
 
     <!-- Home -->
-    <router-link to="/" class="flex justify-center items-center gap-1 font-bold px-2">
+    <router-link to="/" class="flex justify-center items-center gap-1 font-bold px-2 hover:text-orange-400 transition delay-75">
       <svg class="w-4 h-4" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
         <g transform="translate(0 -1028.4)">
           <rect height="5.9999" width="3" y="1031.4" x="17" fill="#c0392b"/>
@@ -23,7 +23,7 @@
     </router-link>
 
     <!-- About -->
-    <router-link to="/about" class="flex justify-center items-center gap-1 font-bold px-2">
+    <router-link to="/about" class="flex justify-center items-center gap-1 font-bold px-2 hover:text-blue-400 transition delay-75">
       <svg class="w-4 h-4 icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <path d="M789.333333 853.333333H234.666667l-128 128V256c0-70.4 57.6-128 128-128h554.666666c70.4 0 128 57.6 128 128v469.333333c0 70.4-57.6 128-128 128z" fill="#2196F3" /><path d="M469.333333 426.666667h85.333334v234.666666h-85.333334z" fill="#FFFFFF" /><path d="M512 320m-42.666667 0a42.666667 42.666667 0 1 0 85.333334 0 42.666667 42.666667 0 1 0-85.333334 0Z" fill="#FFFFFF" />
       </svg>

@@ -1,10 +1,22 @@
 <template>
-  <div class="">
-    <h1>{{ msg }}</h1>
+  <div class="h-screen flex justify-center items-start bg-gray-100 p-5">
+    <div class="bg-white p-5 shadow-md rounded-md">
+      <table class="w-96">
+        <thead class="p-5">
+          <tr>
+            <th>Flag</th>
+          </tr>
+        </thead>
+      <tbody>
+      </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
+
+  import $ from 'jquery';
 
   export default {
     name: 'AppContent',
@@ -26,7 +38,11 @@
           return data;
         })
         .then((response) => {
-          console.log(response)
+
+            $.each(response, (index, country) => {
+
+                console.log(country);
+            });
         })
         .catch((err) => {
           console.error(err);
