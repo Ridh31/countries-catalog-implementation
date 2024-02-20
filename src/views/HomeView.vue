@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <div class="h-screen bg-gray-50 overflow-hidden">
     <div class="flex justify-center items-center">
-      <img alt="Vue logo" src="../assets/images/logo.png">
+      <AppHeader msg="Welcome to Your Vue.js App"/>
+      <AppContent msg="Welcome to Your Vue.js App"/>
     </div>
-    <AppHeader msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
@@ -11,40 +11,13 @@
 
   // @ is an alias to /src
   import AppHeader from '@/components/AppHeader.vue'
+  import AppContent from '@/components/AppContent.vue'
 
   export default {
     name: 'HomeView',
     components: {
-      AppHeader
-    },
-
-    props: {
-      msg: String,
-    },
-    data() {
-      return {
-        fact: "",
-      };
-    },
-    methods: {
-      fetchData() {
-        fetch('https://restcountries.com/v3.1/all', {
-          method: "GET",
-        })
-        .then((response) => {
-          var data = response.json();
-          return data;
-        })
-        .then((response) => {
-          console.log(response)
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-      },
-    },
-    beforeMount() {
-      this.fetchData()
+      AppHeader,
+      AppContent
     },
   }
 
