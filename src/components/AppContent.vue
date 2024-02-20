@@ -1,10 +1,15 @@
 <template>
   <div id="country-catalog" class="h-screen flex justify-center items-start bg-gray-100 p-5">
     <div>
-        <ul class="grid grid-cols-4 gap-3">
+        <ul class="grid grid-cols-7 gap-3">
           <li v-for="country in countries" :key="country" class="bg-white p-5 shadow-md rounded-md">
-            <img :src="country.flags.png">
-            <div>{{ country.name.common }}</div>
+            <div class="select-none flex-shrink-0">
+              <img
+                class="w-full h-20 object-contain"
+                :src="country.flags.png ?? ''"
+                :alt="country.name.common ?? ''">
+            </div>
+            <div>{{ country.name.common ?? "" }}</div>
           </li>
         </ul>
     </div>
