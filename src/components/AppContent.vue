@@ -22,7 +22,7 @@
       </div>
 
       <!-- Catalog -->
-      <ul class="grid grid-cols-5 gap-5">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
         <li v-for="country in countries" :key="country"
           class="flex flex-col gap-3 bg-white p-5 shadow-md rounded-md cursor-pointer hover:scale-105 transition delay-75">
 
@@ -32,45 +32,45 @@
           </div>
 
           <!-- Official name -->
-          <div class="text-start">
-            <span class="font-semibold">Official Name: </span>
-            <span>{{ country.name.official ?? "" }}</span>
+          <div class="flex gap-1 text-start">
+            <span class="select-none font-semibold whitespace-nowrap">Official Name: </span>
+            <span class="text-red-400 line-clamp-1">{{ country.name.official ?? "" }}</span>
           </div>
 
           <!-- cca2 -->
-          <div class="text-start">
-            <span class="font-semibold">cca2: </span>
-            <span class="bg-yellow-200 px-3 py-1 rounded-xl">{{ country.cca2 ?? "" }}</span>
+          <div class="flex gap-1 text-start">
+            <span class="select-none font-semibold whitespace-nowrap">CCA2: </span>
+            <span class="bg-blue-200 px-3 py-0.5 rounded-xl">{{ country.cca2 ?? "" }}</span>
           </div>
 
           <!-- cca3 -->
-          <div class="text-start">
-            <span class="font-semibold">cca3: </span>
-            <span class="bg-green-200 px-3 py-1 rounded-xl">{{ country.cca3 ?? "" }}</span>
+          <div class="flex gap-1 text-start">
+            <span class="select-none font-semibold whitespace-nowrap">CCA3: </span>
+            <span class="bg-green-200 px-3 py-0.5 rounded-xl">{{ country.cca3 ?? "" }}</span>
           </div>
 
           <!-- Native name -->
-          <div class="text-start">
-            <span class="font-semibold">Native name: </span>
-            <span v-for="native in country.name.nativeName" :key="native">
+          <div class="flex gap-1 text-start">
+            <span class="select-none font-semibold whitespace-nowrap">Native name: </span>
+            <span v-for="native in country.name.nativeName" :key="native" class="line-clamp-1">
               {{ native.official ?? "" }}
             </span>
           </div>
 
           <!-- ALT spellings -->
-          <div class="text-start">
-            <span class="font-semibold">ALT Spellings: </span>
-            <span>
+          <div class="flex gap-1 text-start">
+            <span class="select-none font-semibold whitespace-nowrap">ALT Spellings: </span>
+            <span class="line-clamp-1">
               {{ country.altSpellings.join(", ") ?? "" }}
             </span>
           </div>
 
           <!-- idd -->
-          <div class="text-start">
-            <span class="font-semibold">IDD: </span>
-            <span class="bg-red-200 px-3 py-1 rounded-xl">{{ country.idd.root ?? "" }}</span>
-            <span class="bg-red-200 ml-1 px-3 py-1 rounded-xl">
-              {{ country.idd.suffixes ?? "" }}
+          <div class="flex gap-1 text-start">
+            <span class="select-none font-semibold">International Direct Dialing: </span>
+            <span class="bg-gray-200 px-3 py-0.5 rounded-xl">{{ country.idd.root ?? "" }}</span>
+            <span class="bg-gray-200 ml-1 px-3 py-0.5 rounded-xl line-clamp-1">
+              {{ String(country.idd.suffixes).split(",").join(", ") ?? "" }}
             </span>
           </div>
         </li>
