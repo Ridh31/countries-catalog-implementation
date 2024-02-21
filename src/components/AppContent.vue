@@ -22,7 +22,7 @@
       </div>
 
       <!-- Catalog -->
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
+      <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
         <li v-for="country in countries" :key="country"
           class="flex flex-col gap-3 bg-gradient-to-r from-white hover:from-blue-100 to-white hover:to-cyan-100 p-5 shadow-md rounded-md cursor-pointer hover:scale-105 transition delay-75">
 
@@ -123,47 +123,3 @@ export default {
 }
 
 </script>
-
-<style>
-
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-}
-
-.flip-card:focus {
-    outline: 0;
-}
-
-.flip-card:hover .flip-card-inner,
-.flip-card:focus .flip-card-inner{
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.flip-card-front {
-  z-index: 2;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  z-index: 1;
-}
-
-</style>
