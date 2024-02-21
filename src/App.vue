@@ -1,5 +1,5 @@
 <template>
-  <nav class="divide-x-2 divide-gray-300 flex justify-center items-center bg-white p-5 shadow-md sticky top-0 z-30">
+  <nav class="flex justify-center items-center bg-white p-5 shadow-md sticky top-0 z-30">
 
     <!-- Home -->
     <router-link to="/" class="flex justify-center items-center gap-1 font-bold px-2 hover:text-orange-400 transition delay-75">
