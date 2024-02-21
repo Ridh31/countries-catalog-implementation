@@ -1,5 +1,5 @@
 <template>
-  <div id="country-catalog" class="h-screen flex justify-center items-start bg-gray-100 p-5">
+  <div id="country-catalog" class="flex justify-center items-start bg-gray-100 p-5 overflow-auto">
     <div class="flex flex-col gap-5">
 
       <!-- Search & Sort -->
