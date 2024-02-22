@@ -84,7 +84,7 @@
           </div>
           <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
           <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-            
+
             <!-- Modal header -->
             <div class="grid grid-cols-2 border-b border-gray-300 p-5">
               <div class="flex justify-start items-center font-bold text-sm text-gray-800">Country</div>
@@ -181,17 +181,9 @@ export default {
           console.error(err);
         });
     },
-    setPages() {
-      let numberOfPages = Math.ceil(this.posts.length / this.perPage);
-      for (let index = 1; index <= numberOfPages; index++) {
-        this.pages.push(index);
-      }
-    },
     displayModal(index) {
       this.toggleModal()
       this.details = this.countries[index];
-
-      console.log(this.details)
     },
     toggleModal() {
       document.getElementById('modal').classList.toggle('hidden')
