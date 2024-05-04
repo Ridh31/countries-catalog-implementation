@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkcountries_catalog_implementation"]=self["webpackChunkcountries_catalog_implementation"]||[]).push([[839],{4839:function(e,t,n){n.r(t),n.d(t,{default:function(){return d}});var s=n(641);const a={class:"h-screen flex justify-center items-start bg-gray-100 p-5"},i=(0,s.Lk)("div",{class:"bg-white p-5 shadow-md rounded-md"},[(0,s.Lk)("h1",null,"This is the sample of Countries Catalog Implementation.")],-1),r=[i];function o(e,t){return(0,s.uX)(),(0,s.CE)("div",a,r)}var u=n(6262);const c={},l=(0,u.A)(c,[["render",o]]);var d=l}}]);
-//# sourceMappingURL=839.af16664b.js.map
+//# sourceMappingURL=839.df9f895a.js.map
