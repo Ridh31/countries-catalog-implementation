@@ -21,6 +21,16 @@
         </div>
       </div>
 
+      <!-- Pagination -->
+      <nav class="pagination hidden" role="navigation" aria-label="pagination">
+        <ul class="pagination-list">
+          <li v-for="(page) in Math.ceil(countries.length/perPage)" :key="page">
+            <a class="pagination-link"></a>
+            <a class="pagination-link" :class="{'font-bold' : paginate == page}" @click="paginate = page">{{ page }}</a>
+          </li>
+        </ul>
+      </nav>
+
       <!-- Catalog -->
       <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
         <li v-for="(country, index) in countries" :key="country" @click="displayModal(index)"
@@ -158,8 +168,9 @@ export default {
   },
   data() {
     return {
+      country: [],
       countries: [],
-      page: 1,
+      paginate: 1,
       perPage: 25,
       pages: [],
       details: {},
@@ -175,7 +186,14 @@ export default {
           return data;
         })
         .then((response) => {
+
           this.countries = response;
+
+          const startIndex = this.perPage * (this.paginate - 1);
+          const endIndex = startIndex + this.perPage;
+          this.country = response.slice(startIndex, endIndex);
+
+          return this.country;
         })
         .catch((err) => {
           console.error(err);
